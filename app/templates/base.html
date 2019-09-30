@@ -1,0 +1,121 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title> Site about kids </title>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {#    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">#}
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+        }
+
+        .navbar-default {
+            background-color: #FCF7FB;
+        {#background-color: #f5d6d5;#} border-color: #FCF7FB;
+        {#border-color: #f5d6d5;#}
+        }
+
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            width: auto;
+        {#border: 1px solid red;#}
+        }
+
+        .collapse .navbar-collapse {
+            width: auto;
+        }
+
+        .navbar .navbar-collapse {
+            text-align: center;
+            width: auto;
+        }
+
+        li {
+            float: none;
+        {#border: 1px solid red;#}{#font-family: 'Open Sans Condensed', sans-serif;#} font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 22px;
+        }
+
+        li a {
+            color: red;
+        }
+
+        .contact {
+            text-align: center;
+            width: auto;
+            float: none;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                {#                <p>LEFT</p>#}
+            </div>
+            <div class="col-md-8">
+                <img src="/static/pictures/logo.gif" class="center-block" width="150" height="150">
+            </div>
+            <div class="col-md-2">
+                {#                <p>RIGHT</p>#}
+            </div>
+        </div>
+        {% block navbar %}
+            <div class="row">
+                <div class="col-md-2">
+                    {#                    <p>LEFT</p>#}
+                </div>
+
+                <nav class="navbar navbar-default col-md-8 center">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="colapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url_for('index') }}">Главная</a></li>
+                            <li><a href="{{ url_for('gallery') }}">Мальчикам</a></li>
+                            <li><a href="{{ url_for('gallery') }}">Девочкам</a></li>
+                            <li><a href="#">Аксессуары</a></li>
+                            <li><a href="#">Контакты</a></li>
+                            {#                            <li><a href="{{ url_for('element') }}">ELEMENT</a></li>#}
+                            {#                            <li><a href="{{ url_for('gallery') }}">GALLERY</a></li>#}
+                        </ul>
+                    </div>
+                </nav>
+                <div class="col-md-2">
+                    {#                    <p>RIGHT</p>#}
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+        <br><br>
+        <div class="contact">
+            <a href="https://www.facebook.com/">
+                <img src="../static/pictures/facebook.gif" width="80" height="80">
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="../static/pictures/instagram.gif" width="80" height="80">
+            </a>
+            <img src="../static/pictures/wastapp.gif" width="80" height="80">
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+{% endblock %}
